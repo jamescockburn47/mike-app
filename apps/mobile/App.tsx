@@ -2,7 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { useFonts, Manrope_400Regular, Manrope_500Medium, Manrope_600SemiBold, Manrope_700Bold } from '@expo-google-fonts/manrope';
 import SessionScreen from './src/features/session/SessionScreen';
+import OnboardingScreen from './src/features/onboarding/OnboardingScreen';
 import { theme } from './src/theme/theme';
+import { useEffect, useState } from 'react';
+import { getPreferences } from './src/services/preferences';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -11,6 +14,14 @@ export default function App() {
     Manrope_600SemiBold,
     Manrope_700Bold,
   });
+  const [onboarded, setOnboarded] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      const prefs = await getPreferences();
+      setOnboarded(Boolean(prefs?.onboardingComplete));
+    })();
+  }, []);
 
   if (!fontsLoaded) {
     return (
@@ -20,9 +31,21 @@ export default function App() {
     );
   }
 
+  if (onboarded === null) {
+    return (
+      <View style={styles.loading}>
+        <StatusBar style="light" />
+      </View>
+    );
+  }
+
   return (
     <View style={styles.root}>
-      <SessionScreen />
+      {onboarded ? (
+        <SessionScreen />
+      ) : (
+        <OnboardingScreen onDone={() => setOnboarded(true)} />
+      )}
       <StatusBar style="light" />
     </View>
   );
