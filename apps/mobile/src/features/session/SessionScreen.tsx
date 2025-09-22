@@ -292,21 +292,21 @@ export function SessionScreen() {
               variant="ghost"
             />
             <ActionButton
-              label={connecting === 'google' ? 'Connecting…' : 'Connect Google Calendar'}
+              label={connecting === 'google' ? 'Connecting...' : 'Connect Google Calendar'}
               icon="logo-google"
               onPress={handleGoogleConnect}
               variant="secondary"
               disabled={connecting === 'google'}
             />
             <ActionButton
-              label={connecting === 'microsoft' ? 'Connecting…' : 'Connect Microsoft 365'}
+              label={connecting === 'microsoft' ? 'Connecting...' : 'Connect Microsoft 365'}
               icon="logo-microsoft"
               onPress={handleMicrosoftConnect}
               variant="secondary"
               disabled={connecting === 'microsoft'}
             />
             <ActionButton
-              label={connecting === 'spotify' ? 'Connecting…' : 'Connect Spotify'}
+              label={connecting === 'spotify' ? 'Connecting...' : 'Connect Spotify'}
               icon="musical-notes-outline"
               onPress={handleSpotifyConnect}
               variant="secondary"
@@ -324,7 +324,7 @@ export function SessionScreen() {
             />
           </View>
           {agendaLoading ? (
-            <Text style={styles.loadingText}>Loading agenda…</Text>
+            <Text style={styles.loadingText}>Loading agenda...</Text>
           ) : (
             <View>
               {agenda.map((item) => (
@@ -344,7 +344,7 @@ export function SessionScreen() {
             />
           </View>
           {playlistLoading ? (
-            <Text style={styles.loadingText}>Lining up tracks…</Text>
+            <Text style={styles.loadingText}>Lining up tracks...</Text>
           ) : playlist ? (
             <View>
               <Text style={styles.playlistTitle}>{playlist.title}</Text>
@@ -970,6 +970,7 @@ const styles = StyleSheet.create({
 });
 
 export default SessionScreen;
+
 
 
 
