@@ -51,7 +51,7 @@ const PRESETS: RitualPreset[] = [
     prompts: [
       'Where will one brave decision unlock leverage?',
       'Who deserves a quick nudge from you this morning?',
-      'What does “done” look like by noon?',
+      'What does "done" look like by noon?',
     ],
     closing: 'Lock it in. Today you broadcast signal, not noise. Step forward.',
   },
@@ -71,7 +71,7 @@ const PRESETS: RitualPreset[] = [
       'Step away for a two-minute sensory reset at 10:30',
     ],
     microWins: [
-      'Capture three metaphors that describe today’s product vibe',
+      "Capture three metaphors that describe today's product vibe",
       'Record a 30-second voice memo narrating the customer journey',
       'Swap feedback with a teammate on one bold color choice',
     ],
@@ -103,7 +103,7 @@ const PRESETS: RitualPreset[] = [
       'Intentional break penciled for 11:45 to reset posture',
     ],
     microWins: [
-      'Outline today’s deliverable in five bullet anchors',
+      "Outline today's deliverable in five bullet anchors",
       'Flag one risk early and message the stakeholder now',
       'Organize reference tabs into one dashboard view',
     ],
@@ -166,7 +166,7 @@ function buildSlots(preset: RitualPreset): SessionSlot[] {
       title: 'Ignition Brief',
       minSec: 30,
       maxSec: 45,
-      script: `Welcome back. ${preset.heroSubtitle} Today’s focus: ${preset.focus} Headline move: ${preset.highlight}.`,
+      script: `Welcome back. ${preset.heroSubtitle} Today's focus: ${preset.focus} Headline move: ${preset.highlight}.`,
     },
     {
       id: `${preset.id}-affirm`,
@@ -222,6 +222,12 @@ function rotateIndex(length: number, seed: number) {
 function dateSeed(date: Date) {
   return Number(`${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`);
 }
+
+
+
+
+
+
 
 
 

@@ -546,7 +546,7 @@ function TrackRow({ track }: { track: SpotifyBrief['playlist']['tracks'][number]
       <View style={styles.trackContent}>
         <Text style={styles.trackTitle}>{track.title}</Text>
         <Text style={styles.trackMeta}>
-          {track.artist} · {formatDuration(track.duration)}
+          {track.artist} - {formatDuration(track.duration)}
         </Text>
       </View>
     </View>
@@ -556,7 +556,7 @@ function TrackRow({ track }: { track: SpotifyBrief['playlist']['tracks'][number]
 function formatTimeRange(startISO: string, endISO: string) {
   const start = new Date(startISO);
   const end = new Date(endISO);
-  return `${formatTime(start)} — ${formatTime(end)}`;
+  return `${formatTime(start)} - ${formatTime(end)}`;
 }
 
 function formatTime(date: Date) {
@@ -970,6 +970,8 @@ const styles = StyleSheet.create({
 });
 
 export default SessionScreen;
+
+
 
 
 
