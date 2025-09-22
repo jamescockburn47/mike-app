@@ -23,7 +23,7 @@ export function buildSampleAgenda(date: Date = new Date()): SampleAgendaItem[] {
   return [
     {
       id: 'focus-window',
-      title: 'Focus window — ship investor checkpoint',
+      title: 'Focus window - ship investor checkpoint',
       startISO: standUp.toISOString(),
       endISO: maker.toISOString(),
       type: 'focus',
@@ -33,7 +33,7 @@ export function buildSampleAgenda(date: Date = new Date()): SampleAgendaItem[] {
       title: 'Squad sync with product + design',
       startISO: maker.toISOString(),
       endISO: sync.toISOString(),
-      location: 'Signal HQ • Atlas Room',
+      location: 'Signal HQ - Atlas Room',
       type: 'meeting',
     },
     {
@@ -45,3 +45,4 @@ export function buildSampleAgenda(date: Date = new Date()): SampleAgendaItem[] {
     },
   ];
 }
+
